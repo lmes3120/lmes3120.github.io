@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>基本練習</title>
+
+        <style>
+            /* CSS */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #FFFFFF;
+                color:#000000;
+                padding: 30px;
+                text-align:center;
+            }
+
+           
+            #openMapButton {
+                position: absolute;
+                width: 200px;
+                margin-left: -100px;
+                bottom: 30px;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: #35ab72;
+                color: #FFFFFF;
+                border: none;
+                padding: 10px;
+            }
+
+            #imgDiv{
+              position: absolute;
+              left: 50%;  
+              margin-left:-125px;
+
+              top: 50%;
+              margin-top: -150px;
+
+              width: 250px;
+              height:300px;
+              background-color: rgb(193, 173, 212);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+             }
+
+        </style>
+
+	</head>
+
+	<body>
+        <BR>
+	    地圖
+        <BR>
+            
+            
+        <button id="openMapButton" onclick="goPage()">返回首頁</button>
+        
+
+        <div id="imgDiv">
+             <img src="./images/centerImg1.jpg">
+        </div>
+
+
+        <script>
+            // JavaScript 內嵌在這裡
+            // 宣告變數
+            let name = "Alice"; // 可以更改
+            const age = 25;     // 不可更改
+            var city = "Taipei"; // 可更改 (舊方式)
+
+            name = "Jack";
+
+            // 顯示在控制台
+            console.log("Name:", name);
+            console.log("Age:", age);
+            console.log("City:", city);
+
+            name = "May";
+            console.log("Name:", name);
+
+            greet("Marry");
+            greet(name);
+            greet("Jerromy");
+
+            function greet(who) {
+                console.log("HI," + who + "! ")
+            }
+
+            function goPage(){
+                window.location.href = "https://www.google.com.tw/"
+            }
+
+
+        </script>
+
+	</body>
+</html>
