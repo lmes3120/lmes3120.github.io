@@ -9,9 +9,8 @@
             /* CSS */
             body {
                 font-family: Arial, sans-serif;
-                background-color: #1a865e;
-                color:rgb(227, 235, 242);
-                margin: 30px;
+                background-color: #FFFFFF;
+                color:#000000;
                 padding: 30px;
                 text-align:center;
             }
@@ -24,11 +23,26 @@
                 bottom: 30px;
                 cursor: pointer;
                 border-radius: 5px;
-                background-color: #75d6a7;
+                background-color: #35ab72;
                 color: #FFFFFF;
                 border: none;
                 padding: 10px;
             }
+
+            #imgDiv{
+              position: absolute;
+              left: 50%;  
+              margin-left:-125px;
+
+              top: 50%;
+              margin-top: -150px;
+
+              width: 250px;
+              height:300px;
+              background-color: rgb(193, 173, 212);
+            }
+
+
         </style>
 
 	</head>
@@ -39,6 +53,8 @@
         <BR>
             
         <button id="openMapButton" onclick="alert('按鈕被點擊！')">開啟地圖</button>
+        <div id="imgDiv"></div>
+
 
 	</body>
 </html>
