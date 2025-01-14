@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+    <style>
+        #map { 
+            height: 300px; 
+        }
+        
+        #info {
+            width: 100%;
+            background-color: white;
+            height: 200px;
+        }
+        
+        #openCameraButton {
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 5px;
+            bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            color: #FFFFFF;
+            background-color: #222222;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="info"></div>
+
+    <button id="openCameraButton" onclick="goPage()">Open Camera</button>
+
+    <script>
+        var infoDiv = document.getElementById('info');
+
+        let map = L.map('map').setView([25.034189838257852, 121.56451743512416], 13);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker = L.marker([25.033964, 121.564468]).addTo(map)
+                      .bindPopup('這裡是台北 101!');
+
+        var marker2 = L.marker([25.02628220891764, 121.52756985187678]).addTo(map)
+                      .bindPopup('這裡是師大!');
+
+        var marker3 = L.marker([25.08365587103092, 121.55747698890538]).addTo(map)
+                      .bindPopup('這裡是美麗華!');
+
+        marker.on('click', function () {
+            console.log("Click 1");
+            infoDiv.textContent = "101介紹";
+            map.panTo([25.033964, 121.564468]);
+        });
+
+        marker2.on('click', function () {
+            console.log("Click 2");
+            infoDiv.textContent = "師大介紹";
+            map.panTo([25.02628220891764, 121.52756985187678]);
+        });
+
+        marker3.on('click', function () {
+            console.log("Click 3");
+            infoDiv.textContent = "美麗華介紹";
+            map.panTo([25.08365587103092, 121.55747698890538]);
+        });
+
+        function goPage() {
+            window.location.href = "https://mira-ar.n010.app/show/gvyPpd";
+        }
+    </script>
+</body>
+</html>
